@@ -1,0 +1,60 @@
+# Temporary files created by scripts
+/tmp/danted_*.conf
+/tmp/danted*.log
+/tmp/openvpn*.log
+/tmp/vpnns_*_config.sh
+/tmp/vpn_macos_config.sh
+/tmp/wsl-vpn-*.sh
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# Test files
+test/
+*.test.sh
+
+# Personal configuration files
+*.local.sh
+my-config.*
+
+# Windows
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
