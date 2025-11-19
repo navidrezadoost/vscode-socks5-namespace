@@ -127,6 +127,12 @@ Limited isolation using routing and SOCKS proxy (no native namespace support).
 
 ## 📖 Documentation
 
+### Getting Started
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Fast setup guide for all platforms
+- **[USAGE_GUIDE.md](USAGE_GUIDE.md)** - How to configure VSCode, JetBrains IDEs, browsers, and more
+- **[TESTING.md](TESTING.md)** - Comprehensive testing procedures
+
 ### Platform-Specific Guides
 
 - **Linux Distributions:**
@@ -141,6 +147,12 @@ Limited isolation using routing and SOCKS proxy (no native namespace support).
 - **Other Platforms:**
   - [macOS](mac/README.md)
   - [Windows (WSL2)](windows/README.md)
+
+### Additional Resources
+
+- **[SECURITY.md](SECURITY.md)** - Security best practices and hardening
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - How to contribute
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Technical architecture overview
 
 ## 🛠️ Requirements
 
@@ -268,6 +280,41 @@ VPN public IP: 5.6.7.8
 
 ✓ VSCode launched
 ```
+
+### Using the SOCKS5 Proxy
+
+Once connected, you can configure various applications to use the proxy:
+
+**VSCode:**
+```bash
+code --proxy-server="socks5://10.200.200.2:1081"
+```
+
+**JetBrains IDEs (IntelliJ, PyCharm, WebStorm, etc.):**
+- Go to: `Settings` → `Appearance & Behavior` → `System Settings` → `HTTP Proxy`
+- Select: `Manual proxy configuration` → `SOCKS`
+- Host: `10.200.200.2`, Port: `1081`
+
+**Git:**
+```bash
+git config --global http.proxy socks5://10.200.200.2:1081
+```
+
+**cURL:**
+```bash
+curl --socks5-hostname 10.200.200.2:1081 https://api.github.com
+```
+
+**📖 For complete configuration guides, see [USAGE_GUIDE.md](USAGE_GUIDE.md)**
+
+This guide includes detailed instructions for:
+- Visual Studio Code (4 methods)
+- All JetBrains IDEs (IntelliJ, PyCharm, WebStorm, etc.)
+- Web Browsers (Firefox, Chrome, Brave)
+- Git (HTTPS and SSH)
+- Docker
+- Terminal applications (curl, wget, ssh)
+- And many more...
 
 ### Disconnect
 

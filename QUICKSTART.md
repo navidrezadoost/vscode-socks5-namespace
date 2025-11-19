@@ -280,6 +280,52 @@ You can run multiple isolated VPN connections:
 
 ---
 
+## Configuring Other Applications
+
+Besides VSCode, you can configure many other tools to use the SOCKS5 proxy:
+
+### JetBrains IDEs (IntelliJ, PyCharm, WebStorm, etc.)
+
+1. Go to: `Settings` → `Appearance & Behavior` → `System Settings` → `HTTP Proxy`
+2. Select: `Manual proxy configuration` → `SOCKS`
+3. Host: `10.200.200.2`, Port: `1081`
+
+### Web Browsers
+
+**Firefox:**
+- `Settings` → `Network Settings` → Manual proxy → SOCKS v5
+- Host: `10.200.200.2`, Port: `1081`
+
+**Chrome:**
+```bash
+google-chrome --proxy-server="socks5://10.200.200.2:1081"
+```
+
+### Git
+
+```bash
+git config --global http.proxy socks5://10.200.200.2:1081
+```
+
+### Terminal (curl, wget, etc.)
+
+```bash
+export ALL_PROXY=socks5://10.200.200.2:1081
+```
+
+**📖 For complete configuration guides and more applications, see [USAGE_GUIDE.md](USAGE_GUIDE.md)**
+
+The usage guide includes detailed instructions for:
+- Visual Studio Code (4 different methods)
+- All JetBrains IDEs
+- Web browsers (Firefox, Chrome, Brave, etc.)
+- Git (both HTTPS and SSH)
+- Docker
+- Slack, Discord, Postman, and more
+- System-wide proxy configuration
+
+---
+
 ## Security Note
 
 🔒 This tool is for **legitimate development purposes**.
@@ -301,4 +347,10 @@ You can run multiple isolated VPN connections:
 
 ---
 
-**Need more details?** Check the [full documentation](README.md) or platform-specific READMEs.
+## Additional Documentation
+
+- **[USAGE_GUIDE.md](USAGE_GUIDE.md)** - Complete guide for configuring applications
+- **[README.md](README.md)** - Full project documentation
+- **[TESTING.md](TESTING.md)** - Testing and verification procedures
+- **[SECURITY.md](SECURITY.md)** - Security best practices
+- **Platform-specific READMEs** - In each distribution folder
