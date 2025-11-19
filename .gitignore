@@ -1,0 +1,28 @@
+# Temporary files
+*.tmp
+*.log
+*.pid
+
+# VPN configuration files (may contain sensitive data)
+*.ovpn
+!example-config.ovpn
+
+# Dante configuration
+danted-*.conf
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# User credentials
+auth.txt
+*.key
+*.crt
+*.pem
