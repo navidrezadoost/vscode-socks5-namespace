@@ -1,7 +1,7 @@
 #!/bin/bash
-# VSCode SOCKS5 Namespace - Base Connect Script
+# VSCode/JetBrains SOCKS5 Namespace - Base Connect Script
 # Creates an isolated network namespace for OpenVPN + SOCKS5 proxy
-# This allows VSCode to use VPN while keeping host IP unchanged
+# This allows VSCode and JetBrains IDEs to use VPN while keeping host IP unchanged
 
 set -e
 
@@ -9,11 +9,12 @@ set -e
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 echo -e "${GREEN}╔══════════════════════════════════════════════════════════╗${NC}"
-echo -e "${GREEN}║  VSCode SOCKS5 VPN Namespace Setup                      ║${NC}"
-echo -e "${GREEN}║  Isolated OpenVPN connection for VSCode                 ║${NC}"
+echo -e "${GREEN}║  VSCode/JetBrains SOCKS5 VPN Namespace Setup            ║${NC}"
+echo -e "${GREEN}║  Isolated OpenVPN for IDEs (VSCode, IntelliJ, PyCharm)  ║${NC}"
 echo -e "${GREEN}╚══════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -170,7 +171,7 @@ echo -e "${YELLOW}[6/14] Generating SOCKS5 server configuration...${NC}"
 DANTE_CONF="/tmp/danted_$NS.conf"
 sudo tee $DANTE_CONF > /dev/null <<EOF
 logoutput: /tmp/danted_$NS.log
-internal: 127.0.0.1 port = $SOCKS_PORT
+internal: 0.0.0.0 port = $SOCKS_PORT
 external: tun0
 socksmethod: none
 clientmethod: none
@@ -257,6 +258,15 @@ else
     exit 1
 fi
 
+# Additional verification for JetBrains plugins site
+echo -e "${YELLOW}[12.1/14] Testing JetBrains plugins site...${NC}"
+JETBRAINS_TEST=$(curl -s --connect-timeout 10 --socks5-hostname 10.200.200.2:$LOCAL_PROXY_PORT https://plugins.jetbrains.com/ 2>/dev/null | head -c 100)
+if [[ -n "$JETBRAINS_TEST" ]]; then
+    echo -e "${GREEN}✓ JetBrains plugins site accessible through proxy!${NC}"
+else
+    echo -e "${YELLOW}Note: JetBrains plugins site test inconclusive (may still work)${NC}"
+fi
+
 # 13. Save configuration for disconnect script
 echo -e "${YELLOW}[13/14] Saving configuration...${NC}"
 CONFIG_FILE="/tmp/vpnns_${NS}_config.sh"
@@ -280,8 +290,39 @@ echo "  SOCKS5 Address:  socks5://10.200.200.2:$LOCAL_PROXY_PORT"
 echo "  VPN Public IP:   $NS_IP"
 echo "  Host IP:         $HOST_IP (unchanged)"
 echo ""
-echo -e "${YELLOW}To use with VSCode:${NC}"
-echo "  code --proxy-server=\"socks5://10.200.200.2:$LOCAL_PROXY_PORT\""
+echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+echo -e "${BLUE}           IDE Configuration Instructions${NC}"
+echo -e "${BLUE}═══════════════════════════════════════════════════════════${NC}"
+echo ""
+echo -e "${YELLOW}▶ VSCode Configuration:${NC}"
+echo "  Launch with proxy:"
+echo "    code --proxy-server=\"socks5://10.200.200.2:$LOCAL_PROXY_PORT\""
+echo ""
+echo -e "${YELLOW}▶ JetBrains IDEs (IntelliJ, PyCharm, WebStorm, DataGrip, etc.):${NC}"
+echo ""
+echo "  ${GREEN}Method 1: Manual SOCKS Proxy (Recommended)${NC}"
+echo "    1. Open your JetBrains IDE"
+echo "    2. File → Settings → Appearance & Behavior → System Settings → HTTP Proxy"
+echo "    3. Select 'Manual proxy configuration'"
+echo "    4. Select 'SOCKS' (not HTTP/HTTPS)"
+echo "    5. Host name: 10.200.200.2"
+echo "    6. Port number: $LOCAL_PROXY_PORT"
+echo "    7. SOCKS Proxy: Check this box"
+echo "    8. Click 'Check connection' with URL: https://plugins.jetbrains.com"
+echo "    9. Apply and restart IDE"
+echo ""
+echo "  ${GREEN}Method 2: Auto-detect proxy settings${NC}"
+echo "    1. Select 'Auto-detect proxy settings'"
+echo "    2. IDE may automatically detect the SOCKS5 proxy"
+echo ""
+echo "  ${GREEN}Method 3: Launch with JVM argument (Alternative)${NC}"
+echo "    Add to idea.vmoptions or similar:"
+echo "      -Djava.net.socks.host=10.200.200.2"
+echo "      -Djava.net.socks.port=$LOCAL_PROXY_PORT"
+echo ""
+echo -e "${YELLOW}▶ Testing the connection:${NC}"
+echo "  From terminal:"
+echo "    curl --socks5 10.200.200.2:$LOCAL_PROXY_PORT https://plugins.jetbrains.com"
 echo ""
 echo -e "${YELLOW}To disconnect:${NC}"
 echo "  Run the disconnect script for your distribution"

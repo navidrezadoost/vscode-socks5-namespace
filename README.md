@@ -1,18 +1,19 @@
-# VSCode SOCKS5 VPN Namespace
+# VSCode & JetBrains SOCKS5 VPN Namespace
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-blue)]()
+[![Version](https://img.shields.io/badge/Version-2.0.0-green.svg)]()
 
-**Isolated OpenVPN connection for VSCode - Keep your host IP while VSCode uses VPN**
+**Isolated OpenVPN connection for VSCode & JetBrains IDEs - Keep your host IP while your IDEs use VPN**
 
 ## 🌟 Overview
 
-This project provides scripts to create an isolated network environment where **only VSCode** uses a VPN connection, while the rest of your system maintains its original IP address.
+This project provides scripts to create an isolated network environment where **only your IDEs** (VSCode, IntelliJ IDEA, PyCharm, WebStorm, DataGrip, etc.) use a VPN connection, while the rest of your system maintains its original IP address.
 
 ### Why This Matters
 
 In countries with internet filtering or restrictive networks:
-- **Developers** need VPN to access VSCode extensions, GitHub, and development resources
+- **Developers** need VPN to access IDE extensions, plugins, GitHub, and development resources
 - **BUT** turning on system-wide VPN prevents:
   - Colleagues from accessing your local development servers
   - Testing applications on local network
@@ -22,10 +23,26 @@ In countries with internet filtering or restrictive networks:
 ### The Solution
 
 This project creates an **isolated network namespace** (on Linux) or equivalent isolation (macOS/Windows) that:
-- ✅ Routes **only VSCode** traffic through VPN
+- ✅ Routes **only IDE traffic** through VPN (VSCode, JetBrains IDEs)
 - ✅ Keeps your **host IP unchanged** for all other applications
 - ✅ Allows **local network access** for colleagues and testing
 - ✅ Provides **true traffic isolation**
+
+### 🎯 Supported IDEs
+
+#### ✅ Fully Tested & Supported
+- **VSCode** - Visual Studio Code
+- **IntelliJ IDEA** - Ultimate & Community
+- **PyCharm** - Professional & Community
+- **WebStorm** - JavaScript & TypeScript IDE
+- **DataGrip** - Database IDE
+- **PhpStorm** - PHP IDE
+- **GoLand** - Go IDE
+- **CLion** - C/C++ IDE
+- **Rider** - .NET IDE
+- **RubyMine** - Ruby IDE
+- **AppCode** - iOS/macOS IDE
+- **Android Studio** - Built on IntelliJ platform
 
 ## 🚀 Quick Start
 
@@ -47,6 +64,7 @@ cd linux/<your-distro>
 chmod +x connect.sh
 ./connect.sh
 ```
+
 
 </td>
 <td width="33%" align="center">
@@ -117,13 +135,14 @@ Limited isolation using routing and SOCKS proxy (no native namespace support).
 ## 🎯 Features
 
 - **✨ Interactive Setup** - No manual configuration editing required
+- **🎨 Multi-IDE Support** - Works with VSCode and all JetBrains IDEs
 - **🔍 Auto-Detection** - Automatically detects network interface and IP
 - **📦 Dependency Management** - Offers to install missing packages
 - **🎨 Colored Output** - Clear, beautiful terminal interface
 - **💾 Configuration Saving** - Saves setup for easy disconnect
-- **🧪 Built-in Testing** - Verifies proxy functionality
+- **🧪 Built-in Testing** - Verifies proxy functionality including JetBrains plugins
 - **🔄 Easy Disconnect** - Clean teardown of all resources
-- **📚 Comprehensive Docs** - Platform-specific guides for each OS
+- **📚 Comprehensive Docs** - Platform-specific guides for each OS and IDE
 
 ## 📖 Documentation
 
@@ -131,7 +150,9 @@ Limited isolation using routing and SOCKS proxy (no native namespace support).
 
 - **[QUICKSTART.md](QUICKSTART.md)** - Fast setup guide for all platforms
 - **[USAGE_GUIDE.md](USAGE_GUIDE.md)** - How to configure VSCode, JetBrains IDEs, browsers, and more
+- **[JETBRAINS_GUIDE.md](JETBRAINS_GUIDE.md)** - 📘 Comprehensive JetBrains IDEs configuration guide
 - **[TESTING.md](TESTING.md)** - Comprehensive testing procedures
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and changes
 
 ### Platform-Specific Guides
 

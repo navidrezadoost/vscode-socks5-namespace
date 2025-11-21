@@ -1,10 +1,10 @@
 #!/bin/bash
-# VSCode SOCKS5 Namespace - Fedora/RHEL
+# VSCode/JetBrains SOCKS5 Namespace - Fedora/RHEL
 # Optimized for Fedora and RHEL-based distributions
 
 # Source the base script
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BASE_SCRIPT="$SCRIPT_DIR/../../common/connect-base.sh"
+BASE_SCRIPT="$SCRIPT_DIR/../common/connect-base.sh"
 
 # Color codes
 RED='\033[0;31m'
@@ -13,7 +13,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 echo -e "${GREEN}═══════════════════════════════════════════════════${NC}"
-echo -e "${GREEN}  VSCode SOCKS5 VPN Namespace - Fedora/RHEL${NC}"
+echo -e "${GREEN}  VSCode/JetBrains SOCKS5 VPN Namespace - Fedora/RHEL${NC}"
 echo -e "${GREEN}═══════════════════════════════════════════════════${NC}"
 echo ""
 

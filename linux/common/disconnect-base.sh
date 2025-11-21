@@ -1,5 +1,5 @@
 #!/bin/bash
-# VSCode SOCKS5 Namespace - Base Disconnect Script
+# VSCode/JetBrains SOCKS5 Namespace - Base Disconnect Script
 # Clean and complete teardown of the isolated OpenVPN + SOCKS5 setup
 
 set -e
@@ -11,7 +11,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 echo -e "${GREEN}╔══════════════════════════════════════════════════════════╗${NC}"
-echo -e "${GREEN}║  VSCode SOCKS5 VPN Namespace Disconnect                 ║${NC}"
+echo -e "${GREEN}║  VSCode/JetBrains SOCKS5 VPN Namespace Disconnect      ║${NC}"
 echo -e "${GREEN}╚══════════════════════════════════════════════════════════╝${NC}"
 echo ""
 
