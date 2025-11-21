@@ -2,7 +2,7 @@
 # VSCode SOCKS5 Namespace Disconnect - Manjaro Linux
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BASE_SCRIPT="$SCRIPT_DIR/../../common/disconnect-base.sh"
+BASE_SCRIPT="$SCRIPT_DIR/../common/disconnect-base.sh"
 
 # Run the base disconnect script
 if [ -f "$BASE_SCRIPT" ]; then
