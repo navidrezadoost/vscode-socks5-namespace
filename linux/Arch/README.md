@@ -24,7 +24,7 @@ sudo pacman -S openvpn dante socat curl iproute2 iptables
 ### Connect to VPN
 
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/Arch
+cd /path/to/dev-socks-isolation/linux/Arch
 chmod +x connect.sh
 ./connect.sh
 ```
@@ -63,8 +63,8 @@ After=network.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/path/to/vscode-socks5-namespace/linux/Arch/connect.sh
-ExecStop=/path/to/vscode-socks5-namespace/linux/Arch/disconnect.sh
+ExecStart=/path/to/dev-socks-isolation/linux/Arch/connect.sh
+ExecStop=/path/to/dev-socks-isolation/linux/Arch/disconnect.sh
 
 [Install]
 WantedBy=multi-user.target

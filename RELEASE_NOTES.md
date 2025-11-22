@@ -77,8 +77,8 @@ Version 2.0.0 now supports **all JetBrains IDEs**, enabling developers to route 
 
 ### New Installation
 ```bash
-git clone https://github.com/navidrezadoost/vscode-socks5-namespace.git
-cd vscode-socks5-namespace/linux/<your-distro>
+git clone https://github.com/navidrezadoost/dev-socks-isolation.git
+cd dev-socks-isolation/linux/<your-distro>
 chmod +x connect.sh
 ./connect.sh
 ```
@@ -86,7 +86,7 @@ chmod +x connect.sh
 ### Upgrading from 1.x
 ```bash
 # Navigate to your existing installation
-cd vscode-socks5-namespace
+cd dev-socks-isolation
 
 # Pull latest changes
 git pull origin main
@@ -160,7 +160,7 @@ See [TESTING.md](TESTING.md) for comprehensive testing procedures.
 None at this time. If you encounter any issues:
 1. Check the [JETBRAINS_GUIDE.md](JETBRAINS_GUIDE.md) troubleshooting section
 2. Review logs: `/tmp/danted_vpnspace.log` and `/tmp/openvpn_vpnspace.log`
-3. [Open an issue](https://github.com/navidrezadoost/vscode-socks5-namespace/issues)
+3. [Open an issue](https://github.com/navidrezadoost/dev-socks-isolation/issues)
 
 ---
 
@@ -247,8 +247,8 @@ Stay tuned!
 ## 📞 Support
 
 - **Documentation**: See [docs](README.md#documentation) section
-- **Issues**: [GitHub Issues](https://github.com/navidrezadoost/vscode-socks5-namespace/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/navidrezadoost/vscode-socks5-namespace/discussions)
+- **Issues**: [GitHub Issues](https://github.com/navidrezadoost/dev-socks-isolation/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/navidrezadoost/dev-socks-isolation/discussions)
 
 ---
 

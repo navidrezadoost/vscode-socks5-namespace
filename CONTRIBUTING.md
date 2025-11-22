@@ -185,8 +185,8 @@ For testing Windows scripts:
 
 1. **Clone your fork:**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/vscode-socks5-namespace.git
-   cd vscode-socks5-namespace
+   git clone https://github.com/YOUR-USERNAME/dev-socks-isolation.git
+   cd dev-socks-isolation
    ```
 
 2. **Make your changes**

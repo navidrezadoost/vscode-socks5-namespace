@@ -39,7 +39,7 @@ yay -S openvpn dante socat curl
 ### Connect to VPN
 
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/Manjaro
+cd /path/to/dev-socks-isolation/linux/Manjaro
 chmod +x connect.sh
 ./connect.sh
 ```
@@ -149,8 +149,8 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/path/to/vscode-socks5-namespace/linux/Manjaro/connect.sh
-ExecStop=/path/to/vscode-socks5-namespace/linux/Manjaro/disconnect.sh
+ExecStart=/path/to/dev-socks-isolation/linux/Manjaro/connect.sh
+ExecStop=/path/to/dev-socks-isolation/linux/Manjaro/disconnect.sh
 StandardInput=tty-force
 
 [Install]
@@ -241,7 +241,7 @@ Add:
 Type=Application
 Name=VSCode with VPN
 Comment=Launch VSCode through isolated VPN namespace
-Exec=/path/to/vscode-socks5-namespace/linux/Manjaro/connect.sh
+Exec=/path/to/dev-socks-isolation/linux/Manjaro/connect.sh
 Icon=vscode
 Terminal=true
 Categories=Development;Network;

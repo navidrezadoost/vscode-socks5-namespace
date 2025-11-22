@@ -25,7 +25,7 @@ sudo apt install openvpn dante-server socat curl iproute2 iptables
 ### Connect to VPN
 
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/Ubuntu
+cd /path/to/dev-socks-isolation/linux/Ubuntu
 chmod +x connect.sh
 ./connect.sh
 ```
@@ -83,8 +83,8 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/path/to/vscode-socks5-namespace/linux/Ubuntu/connect.sh
-ExecStop=/path/to/vscode-socks5-namespace/linux/Ubuntu/disconnect.sh
+ExecStart=/path/to/dev-socks-isolation/linux/Ubuntu/connect.sh
+ExecStop=/path/to/dev-socks-isolation/linux/Ubuntu/disconnect.sh
 StandardInput=tty-force
 StandardOutput=journal
 StandardError=journal

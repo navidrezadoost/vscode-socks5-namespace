@@ -56,7 +56,7 @@ wsl --update
 **Open PowerShell as Administrator:**
 
 ```powershell
-cd \path\to\vscode-socks5-namespace\windows
+cd \path\to\dev-socks-isolation\windows
 .\connect.ps1
 ```
 

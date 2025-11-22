@@ -429,8 +429,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues:** [GitHub Issues](https://github.com/navidrezadoost/vscode-socks5-namespace/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/navidrezadoost/vscode-socks5-namespace/discussions)
+- **Issues:** [GitHub Issues](https://github.com/navidrezadoost/dev-socks-isolation/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/navidrezadoost/dev-socks-isolation/discussions)
 
 ## 🌐 Tested Platforms
 

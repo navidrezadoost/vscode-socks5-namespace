@@ -40,7 +40,7 @@ brew install openvpn dante socat
 ### Connect to VPN
 
 ```bash
-cd /path/to/vscode-socks5-namespace/mac
+cd /path/to/dev-socks-isolation/mac
 chmod +x connect.sh
 ./connect.sh
 ```
@@ -125,7 +125,7 @@ Add:
     <string>com.vscode.vpnproxy</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/path/to/vscode-socks5-namespace/mac/connect.sh</string>
+        <string>/path/to/dev-socks-isolation/mac/connect.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>

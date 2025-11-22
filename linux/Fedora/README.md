@@ -33,7 +33,7 @@ sudo dnf install openvpn dante-server socat curl iproute iptables
 ### Connect to VPN
 
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/Fedora
+cd /path/to/dev-socks-isolation/linux/Fedora
 chmod +x connect.sh
 ./connect.sh
 ```
@@ -117,8 +117,8 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/path/to/vscode-socks5-namespace/linux/Fedora/connect.sh
-ExecStop=/path/to/vscode-socks5-namespace/linux/Fedora/disconnect.sh
+ExecStart=/path/to/dev-socks-isolation/linux/Fedora/connect.sh
+ExecStop=/path/to/dev-socks-isolation/linux/Fedora/disconnect.sh
 StandardInput=tty-force
 
 [Install]

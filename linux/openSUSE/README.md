@@ -25,7 +25,7 @@ sudo zypper install openvpn dante-server socat curl iproute2 iptables
 ### Connect to VPN
 
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/openSUSE
+cd /path/to/dev-socks-isolation/linux/openSUSE
 chmod +x connect.sh
 ./connect.sh
 ```
@@ -107,8 +107,8 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/path/to/vscode-socks5-namespace/linux/openSUSE/connect.sh
-ExecStop=/path/to/vscode-socks5-namespace/linux/openSUSE/disconnect.sh
+ExecStart=/path/to/dev-socks-isolation/linux/openSUSE/connect.sh
+ExecStop=/path/to/dev-socks-isolation/linux/openSUSE/disconnect.sh
 StandardInput=tty-force
 
 [Install]

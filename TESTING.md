@@ -168,7 +168,7 @@ cp /path/to/your/config.ovpn ~/config.ovpn.backup
 
 **Step 1: Navigate to directory**
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/Ubuntu
+cd /path/to/dev-socks-isolation/linux/Ubuntu
 ls -la
 # Should see: connect.sh, disconnect.sh, README.md
 ```
@@ -606,7 +606,7 @@ sudo ufw enable
 
 **Navigate to Arch directory:**
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/Arch
+cd /path/to/dev-socks-isolation/linux/Arch
 ./connect.sh
 ```
 
@@ -633,7 +633,7 @@ pacman -Q openvpn dante socat
 
 **Navigate to Fedora directory:**
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/Fedora
+cd /path/to/dev-socks-isolation/linux/Fedora
 ./connect.sh
 ```
 
@@ -673,7 +673,7 @@ sudo firewall-cmd --reload
 **Special test: AUR support**
 
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/Manjaro
+cd /path/to/dev-socks-isolation/linux/Manjaro
 ./connect.sh
 ```
 
@@ -695,7 +695,7 @@ yay -S --needed --noconfirm dante
 - Pentesting use case notice
 
 ```bash
-cd /path/to/vscode-socks5-namespace/linux/Kali
+cd /path/to/dev-socks-isolation/linux/Kali
 ./connect.sh
 ```
 
@@ -723,7 +723,7 @@ sudo ip netns exec vpnspace curl https://api.ipify.org
 
 **Navigate to mac directory:**
 ```bash
-cd /path/to/vscode-socks5-namespace/mac
+cd /path/to/dev-socks-isolation/mac
 ./connect.sh
 ```
 
@@ -778,7 +778,7 @@ curl --socks5-hostname 127.0.0.1:1080 https://api.ipify.org
 
 **Open PowerShell as Administrator:**
 ```powershell
-cd \path\to\vscode-socks5-namespace\windows
+cd \path\to\dev-socks-isolation\windows
 ```
 
 **Test execution policy:**
